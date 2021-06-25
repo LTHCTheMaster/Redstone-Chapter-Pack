@@ -1,0 +1,46 @@
+{
+    "display": {
+      "icon": {
+        "item": "minecraft:redstone_block"
+      },
+      "title": "Red red red",
+      "description": "Get a stack of redstone block for a really cool reward",
+      "frame": "goal",
+      "show_toast": true,
+      "announce_to_chat": false,
+      "hidden": false
+    },
+    "parent": "lthc.chapter.ores.redstone:sequel/start",
+    "criteria": {
+      "unlock": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "player": {
+                  "advancements": {
+                    "lthc.chapter.ores.redstone:sequel/start": true
+                  }
+                }
+              }
+            }
+          ],
+          "items": [
+            {
+              "items": [
+                "minecraft:redstone_block"
+              ],
+              "count": 64
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "experience": 500,
+      "function": "lthc.chapter.ores.redstone:next_reward"
+    }
+  }
